@@ -42,11 +42,11 @@ client.on('message', async msg => {
 	command = command.slice(prefix.length)
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
-		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
+		if (!voiceChannel) return msg.channel.send('لازم تدخل روم .');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			
-			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
+			return msg.channel.send('ماكدر احجي بهذآ الروم');
 		}
 		if (!permissions.has('SPEAK')) {
 			return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
